@@ -1,4 +1,4 @@
-package org.prms.kdtordertest;
+package org.prms.kdt.order;
 
 public enum OrderStatus {
     ACCEPTED,

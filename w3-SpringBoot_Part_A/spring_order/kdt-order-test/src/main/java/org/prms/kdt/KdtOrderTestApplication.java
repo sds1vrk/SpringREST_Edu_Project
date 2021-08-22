@@ -1,4 +1,4 @@
-package org.prms.kdtordertest;
+package org.prms.kdt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,14 @@
-package org.prms.kdtordertest;
+package org.prms.kdt.order;
+
+import org.prms.kdt.voucher.VoucherService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+
+
+@Service
 public class OrderService {
     // DI - 외부에 의해 주입받음 (생성자로부터)
     private final VoucherService voucherService;
@@ -18,9 +24,9 @@ public class OrderService {
 
         var order= new Order(UUID.randomUUID(),customerId,orderItems);
         // order 정보 저장
-        orderRepository.insert(order);
+        return orderRepository.insert(order);
 
-        return order;
+
     }
 
     // Voucher가 잇는 경우

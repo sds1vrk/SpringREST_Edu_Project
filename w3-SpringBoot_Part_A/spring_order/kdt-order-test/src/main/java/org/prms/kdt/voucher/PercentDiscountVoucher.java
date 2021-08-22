@@ -1,8 +1,8 @@
-package org.prms.kdtordertest;
+package org.prms.kdt.voucher;
 
 import java.util.UUID;
 
-public class PercentDiscountVoucher implements Voucher{
+public class PercentDiscountVoucher implements Voucher {
 
     private final UUID voucher;
     private final long percnet;

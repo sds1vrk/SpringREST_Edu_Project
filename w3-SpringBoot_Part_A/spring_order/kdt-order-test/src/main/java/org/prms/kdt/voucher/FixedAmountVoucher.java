@@ -1,4 +1,4 @@
-package org.prms.kdtordertest;
+package org.prms.kdt.voucher;
 
 import java.util.UUID;
 
