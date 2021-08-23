@@ -22,20 +22,18 @@ public class OrderTester {
     public static void main(String[] args) {
 
         // AppConfiguration을 사용하기 위해
-        var applicationContext=new AnnotationConfigApplicationContext(AppConfiguration.class);
-//        applicationContext.register(AppConfiguration.class);
+        var applicationContext=new AnnotationConfigApplicationContext();
 
-        // Property 사용
-//        var environmnet=applicationContext.getEnvironment();
+        // Profile 사용
+        applicationContext.register(AppConfiguration.class);
+        var environmnet=applicationContext.getEnvironment();
+        environmnet.setActiveProfiles("dev");         // local -> memory /  dev -> jdbc
+        applicationContext.refresh(); //Profile 적용될수 있게 refresh
 
-//        environmnet.setActiveProfiles("local");
 
 
-        // local -> memory
-        // dev -> jdbc
-//        applicationContext.refresh();
 
-        var orderProperties=applicationContext.getBean(OrderProperties.class);
+
 
 
 //        var version=environmnet.getProperty("kdt.version");
@@ -43,6 +41,9 @@ public class OrderTester {
 //        var supportVendors=environmnet.getProperty("kdt.support-vendors", List.class); // List로 받음
 //        var description=environmnet.getProperty("kdt.description",List.class);
 
+
+        // OrderProperties.class에서 Bean으로 등록된 것을 사용
+        var orderProperties=applicationContext.getBean(OrderProperties.class);
         System.out.println(MessageFormat.format("version -> {0}",orderProperties.getVersion()));
         System.out.println(MessageFormat.format("minimumAmount -> {0}",orderProperties.getMinimumOrderAmount()));
         System.out.println(MessageFormat.format("supportVendors -> {0}",orderProperties.getSupportVendors()));
@@ -54,13 +55,13 @@ public class OrderTester {
         var customerId= UUID.randomUUID();
 
         // 할인 적용
-        var voucherRepository=BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(),VoucherRepository.class,"memory");
+//        var voucherRepository=BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(),VoucherRepository.class,"memory");
 //        var voucherRepository2=BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(),VoucherRepository.class,"memory");
-//        var voucherRepository=applicationContext.getBean(VoucherRepository.class);  // qualifier를 안쓸경우 이거 사용
+        var voucherRepository=applicationContext.getBean(VoucherRepository.class);  // qualifier를 안쓸경우 이거 사용
         var voucher=voucherRepository.insert(new FixedAmountVoucher(UUID.randomUUID(),10L));
 
-//        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository instanceof JdbcVoucherRepository));
-//        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository.getClass().getCanonicalName()));
+        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository instanceof JdbcVoucherRepository));
+        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository.getClass().getCanonicalName()));
 
         // 만들어진 객체가 실제 같은지 확인
 //        System.out.println(MessageFormat.format("voucherRepository {0}",voucherRepository));
