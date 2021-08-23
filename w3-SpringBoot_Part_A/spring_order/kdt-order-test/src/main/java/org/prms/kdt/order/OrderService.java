@@ -1,5 +1,6 @@
 package org.prms.kdt.order;
 
+import org.prms.kdt.configuration.VersionProvider;
 import org.prms.kdt.voucher.VoucherService;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,14 @@ public class OrderService {
     private final VoucherService voucherService;
     private final OrderRepository orderRepository;
 
-    public OrderService(VoucherService voucherService, OrderRepository orderRepository) {
+    // Property에서 version을 받아 주입
+    private final VersionProvider versionProvider;
+
+
+    public OrderService(VoucherService voucherService, OrderRepository orderRepository, VersionProvider versionProvider) {
         this.voucherService = voucherService;
         this.orderRepository = orderRepository;
+        this.versionProvider=versionProvider;
     }
 
     // Voucher가 없는 경우
@@ -31,6 +37,9 @@ public class OrderService {
 
     // Voucher가 잇는 경우
     public Order createOrder(UUID customerId, List<OrderItem> orderItems, UUID voucherId) {
+
+        versionProvider.getVersion();
+
         var voucher=voucherService.getVoucher(voucherId);
         var order= new Order(UUID.randomUUID(),customerId,orderItems,voucher);
         // order 정보 저장
