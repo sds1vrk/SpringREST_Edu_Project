@@ -12,14 +12,20 @@ import org.springframework.beans.factory.annotation.BeanFactoryAnnotationUtils;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.channels.Channels;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class OrderTester {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         // AppConfiguration을 사용하기 위해
         var applicationContext=new AnnotationConfigApplicationContext();
@@ -27,7 +33,7 @@ public class OrderTester {
         // Profile 사용
         applicationContext.register(AppConfiguration.class);
         var environmnet=applicationContext.getEnvironment();
-        environmnet.setActiveProfiles("dev");         // local -> memory /  dev -> jdbc
+//        environmnet.setActiveProfiles("dev");         // local -> memory /  dev -> jdbc
         applicationContext.refresh(); //Profile 적용될수 있게 refresh
 
 
@@ -44,24 +50,40 @@ public class OrderTester {
 
         // OrderProperties.class에서 Bean으로 등록된 것을 사용
         var orderProperties=applicationContext.getBean(OrderProperties.class);
-        System.out.println(MessageFormat.format("version -> {0}",orderProperties.getVersion()));
-        System.out.println(MessageFormat.format("minimumAmount -> {0}",orderProperties.getMinimumOrderAmount()));
-        System.out.println(MessageFormat.format("supportVendors -> {0}",orderProperties.getSupportVendors()));
-        System.out.println(MessageFormat.format("description -> {0}",orderProperties.getDescription()));
+//        System.out.println(MessageFormat.format("version -> {0}",orderProperties.getVersion()));
+//        System.out.println(MessageFormat.format("minimumAmount -> {0}",orderProperties.getMinimumOrderAmount()));
+//        System.out.println(MessageFormat.format("supportVendors -> {0}",orderProperties.getSupportVendors()));
+//        System.out.println(MessageFormat.format("description -> {0}",orderProperties.getDescription()));
 
+
+        //Reource
+//        var resource=applicationContext.getResource("application.yaml");
+//        var resource=applicationContext.getResource("file:temp/sample.txt"); // 현재 폴더 위치에서 찾음 // 배포에서
+        var resource3=applicationContext.getResource("https://stackoverflow.com"); // 현재 폴더 위치에서 찾음 // 배포에서
+        var readableByteChannel=Channels.newChannel(resource3.getURL().openStream());
+        var bufferedReader=new BufferedReader(Channels.newReader(readableByteChannel, StandardCharsets.UTF_8));
+        var contents=bufferedReader.lines().collect(Collectors.joining("\n"));
+        System.out.println(contents);
+
+//        System.out.println(MessageFormat.format("Resource->{0}", resource.getClass().getCanonicalName()));
+//        var file=resource.getFile();
+//        var strings=Files.readAllLines(file.toPath());
+//        System.out.println(strings.stream().reduce("",(a,b)->a+"\n"+b));
 
 
 
         var customerId= UUID.randomUUID();
 
         // 할인 적용
-//        var voucherRepository=BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(),VoucherRepository.class,"memory");
+        var voucherRepository=BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(),VoucherRepository.class,"memory");
 //        var voucherRepository2=BeanFactoryAnnotationUtils.qualifiedBeanOfType(applicationContext.getBeanFactory(),VoucherRepository.class,"memory");
-        var voucherRepository=applicationContext.getBean(VoucherRepository.class);  // qualifier를 안쓸경우 이거 사용
-        var voucher=voucherRepository.insert(new FixedAmountVoucher(UUID.randomUUID(),10L));
 
-        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository instanceof JdbcVoucherRepository));
-        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository.getClass().getCanonicalName()));
+
+//        var voucherRepository=applicationContext.getBean(VoucherRepository.class);  // qualifier를 안쓸경우 이거 사용
+        var voucher=voucherRepository.insert(new FixedAmountVoucher(UUID.randomUUID(),10L));
+//
+//        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository instanceof JdbcVoucherRepository));
+//        System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository.getClass().getCanonicalName()));
 
         // 만들어진 객체가 실제 같은지 확인
 //        System.out.println(MessageFormat.format("voucherRepository {0}",voucherRepository));
