@@ -1051,13 +1051,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="288" parent="284" name="last_login_at">
       <Position>4</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime(6)|0s</DataType>
     </column>
     <column id="289" parent="284" name="created_at">
       <Position>5</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <DefaultExpression>CURRENT_TIMESTAMP(6)</DefaultExpression>
     </column>
     <index id="290" parent="284" name="unq_user_email">
       <ColNames>email</ColNames>
