@@ -16,14 +16,20 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     // Property에서 version을 받아 주입
-    private final VersionProvider versionProvider;
+//    private final VersionProvider versionProvider;
 
 
-    public OrderService(VoucherService voucherService, OrderRepository orderRepository, VersionProvider versionProvider) {
+//    public OrderService(VoucherService voucherService, OrderRepository orderRepository, VersionProvider versionProvider) {
+//        this.voucherService = voucherService;
+//        this.orderRepository = orderRepository;
+//        this.versionProvider=versionProvider;
+//    }
+
+    public OrderService(VoucherService voucherService, OrderRepository orderRepository) {
         this.voucherService = voucherService;
         this.orderRepository = orderRepository;
-        this.versionProvider=versionProvider;
     }
+
 
     // Voucher가 없는 경우
     public Order createOrder(UUID customerId, List<OrderItem> orderItems) {
@@ -38,7 +44,7 @@ public class OrderService {
     // Voucher가 잇는 경우
     public Order createOrder(UUID customerId, List<OrderItem> orderItems, UUID voucherId) {
 
-        versionProvider.getVersion();
+//        versionProvider.getVersion();
 
         var voucher=voucherService.getVoucher(voucherId);
         var order= new Order(UUID.randomUUID(),customerId,orderItems,voucher);

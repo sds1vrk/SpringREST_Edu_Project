@@ -1,0 +1,50 @@
+<configuration>
+
+
+    <conversionRule
+            conversionWord="clr"
+            converterClass="org.springframework.boot.logging.logback.ColorConverter"></conversionRule>
+
+    <property name="CONSOLE_LOG_PATTERN" value="%clr(%d{HH:mm:ss.SSS}){cyan} [%thread] %clr(%-5level) %logger{36} - %msg%n"></property>
+    <property name="FILE_PATTERN" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"></property>
+    <timestamp key="bySecond" datePattern="yyyMMdd'T'HHmmss"></timestamp>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+<!--    <appender name="FILE" class="ch.qos.logback.core.FileAppender">-->
+<!--        &lt;!&ndash; 파일 시간 대로 저장 됨&ndash;&gt;-->
+<!--        <file>logs/kdt_${bySecond}.log</file>-->
+<!--        &lt;!&ndash;        appender false 더 추가되지 않고 덮어씌움 &ndash;&gt;-->
+<!--        <append>false</append>-->
+<!--        <encoder>-->
+<!--            <pattern>${FILE_PATTERN}</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+
+    <!--알아서 시간이 지나면 만들어주는 롤링 파일   -->
+    <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--기존(어제) 로그는 따로 저장되고 최신 로그는 access-log로 저장됨        -->
+        <file>logs/access.log</file> <!-- 2021-07-01 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/access-%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="org.prms.kdt" level="debug">
+        <appender-ref ref="ROLLING_FILE" />
+    </logger>
+
+    <root level="warn">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

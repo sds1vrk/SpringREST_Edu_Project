@@ -1,0 +1,104 @@
+21:58:25.859 [main] WARN  org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+21:58:25.862 [main] WARN  org.prms.kdt.OrderTester - version -> default-v1.0
+21:58:25.862 [main] WARN  org.prms.kdt.OrderTester - minimumAmount -> 1
+21:58:25.862 [main] WARN  org.prms.kdt.OrderTester - supportVendors -> [defulat]
+21:58:25.862 [main] WARN  org.prms.kdt.OrderTester - description -> defulat line 1  hello world
+defulat line 2 xxxx
+defulat line 3
+22:06:46.870 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 10164 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:06:46.874 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:06:47.256 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.683 seconds (JVM running for 1.307)
+22:07:44.035 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 11780 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:07:44.036 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:07:44.421 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.74 seconds (JVM running for 1.287)
+22:08:36.673 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 6724 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:08:36.674 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:08:36.674 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:08:36.995 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:08:36.995 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:08:36.995 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:08:36.995 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:08:37.042 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.711 seconds (JVM running for 1.273)
+22:14:14.604 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 19316 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:14:14.606 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:14:14.606 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:14:14.949 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:14:14.950 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:14:14.950 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:14:14.950 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:14:14.999 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.682 seconds (JVM running for 1.285)
+22:15:09.749 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 14524 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:15:09.751 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:15:09.751 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:15:10.099 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:15:10.100 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:15:10.100 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:15:10.100 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:15:10.153 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.714 seconds (JVM running for 1.44)
+22:15:10.156 [main] ERROR org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+22:15:10.156 [main] WARN  org.prms.kdt.OrderTester - version -> v1.0
+22:15:10.156 [main] WARN  org.prms.kdt.OrderTester - minimumAmount -> 1
+22:15:10.156 [main] WARN  org.prms.kdt.OrderTester - supportVendors -> [dev-a, dev-b, c, d]
+22:15:10.156 [main] WARN  org.prms.kdt.OrderTester - description -> line 1  hello world
+line 2 xxxx
+line 3
+22:24:11.966 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 8552 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:24:11.968 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:24:11.968 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:24:12.364 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:24:12.364 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:24:12.365 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:24:12.365 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:24:12.414 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.793 seconds (JVM running for 1.358)
+22:24:12.416 [main] ERROR org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+22:24:12.416 [main] WARN  org.prms.kdt.OrderTester - version -> v1.0
+22:24:12.416 [main] WARN  org.prms.kdt.OrderTester - minimumAmount -> 1
+22:24:12.416 [main] WARN  org.prms.kdt.OrderTester - supportVendors -> [dev-a, dev-b, c, d]
+22:24:12.416 [main] WARN  org.prms.kdt.OrderTester - description -> line 1  hello world
+line 2 xxxx
+line 3
+22:24:21.284 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 8840 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:24:21.287 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:24:21.287 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:24:21.622 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:24:21.622 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:24:21.622 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:24:21.623 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:24:21.676 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.684 seconds (JVM running for 1.282)
+22:24:21.679 [main] ERROR org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+22:24:21.679 [main] WARN  org.prms.kdt.OrderTester - version -> v1.0
+22:24:21.679 [main] WARN  org.prms.kdt.OrderTester - minimumAmount -> 1
+22:24:21.679 [main] WARN  org.prms.kdt.OrderTester - supportVendors -> [dev-a, dev-b, c, d]
+22:24:21.679 [main] WARN  org.prms.kdt.OrderTester - description -> line 1  hello world
+line 2 xxxx
+line 3
+22:24:45.597 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 6032 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:24:45.599 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:24:45.599 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:24:45.988 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:24:45.989 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:24:45.989 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:24:45.989 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:24:46.043 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.732 seconds (JVM running for 1.322)
+22:24:46.045 [main] ERROR org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+22:24:46.045 [main] WARN  org.prms.kdt.OrderTester - version -> v1.0
+22:24:46.045 [main] WARN  org.prms.kdt.OrderTester - minimumAmount -> 1
+22:24:46.045 [main] WARN  org.prms.kdt.OrderTester - supportVendors -> [dev-a, dev-b, c, d]
+22:24:46.045 [main] WARN  org.prms.kdt.OrderTester - description -> line 1  hello world
+line 2 xxxx
+line 3
+22:30:44.425 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Starting KdtOrderTestApplication using Java 16.0.2 on DESKTOP-HPDSR6D with PID 19376 (C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order\kdt-order-test\target\classes started by seo in C:\Users\seo\Desktop\springboot_1\w3-SpringBoot_Part_A\spring_order)
+22:30:44.426 [main] DEBUG org.prms.kdt.KdtOrderTestApplication - Running with Spring Boot v2.5.3, Spring v5.3.9
+22:30:44.427 [main] INFO  org.prms.kdt.KdtOrderTestApplication - The following profiles are active: dev
+22:30:44.758 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] version-> v1.0
+22:30:44.758 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties] minimumOrderAmount-> 1
+22:30:44.758 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  supportVendors -> [dev-a, dev-b, c, d]
+22:30:44.758 [main] DEBUG org.prms.kdt.order.OrderProperties - [OrderProperties]  javaHOME -> C:\Program Files\Java\jdk-16.0.2
+22:30:44.806 [main] INFO  org.prms.kdt.KdtOrderTestApplication - Started KdtOrderTestApplication in 0.671 seconds (JVM running for 1.505)
+22:30:44.809 [main] ERROR org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+22:30:44.809 [main] WARN  org.prms.kdt.OrderTester - version -> v1.0
+22:30:44.809 [main] WARN  org.prms.kdt.OrderTester - minimumAmount -> 1
+22:30:44.809 [main] WARN  org.prms.kdt.OrderTester - supportVendors -> [dev-a, dev-b, c, d]
+22:30:44.809 [main] WARN  org.prms.kdt.OrderTester - description -> line 1  hello world
+line 2 xxxx
+line 3

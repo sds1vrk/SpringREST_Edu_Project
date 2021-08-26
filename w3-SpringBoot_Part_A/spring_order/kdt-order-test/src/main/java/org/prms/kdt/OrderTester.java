@@ -8,7 +8,10 @@ import org.prms.kdt.voucher.FixedAmountVoucher;
 import org.prms.kdt.voucher.JdbcVoucherRepository;
 import org.prms.kdt.voucher.*;
 import org.prms.kdt.voucher.VoucherRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.BeanFactoryAnnotationUtils;
+import org.springframework.boot.ansi.AnsiOutput;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.util.Assert;
 
@@ -24,8 +27,16 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class OrderTester {
+    // 로거를 만들고 로거 명을 지정한다. 로거 명은 보통 클래스로 지정
+    // 패키지명을 기준으로도 가능
+    // org.prms.kdt.order => INFO로 지정
+    // org.prms.kdt.voucher ==> WARN
+    private static final Logger logger= LoggerFactory.getLogger(OrderTester.class);
+
 
     public static void main(String[] args) throws IOException {
+
+        AnsiOutput.setEnabled(AnsiOutput.Enabled.ALWAYS);
 
         // AppConfiguration을 사용하기 위해
         var applicationContext=new AnnotationConfigApplicationContext();
@@ -39,9 +50,6 @@ public class OrderTester {
 
 
 
-
-
-
 //        var version=environmnet.getProperty("kdt.version");
 //        var minimumOrderAmount=environmnet.getProperty("kdt.minimum-order-amount",Integer.class); // Integer로 받음
 //        var supportVendors=environmnet.getProperty("kdt.support-vendors", List.class); // List로 받음
@@ -50,10 +58,11 @@ public class OrderTester {
 
         // OrderProperties.class에서 Bean으로 등록된 것을 사용
         var orderProperties=applicationContext.getBean(OrderProperties.class);
-//        System.out.println(MessageFormat.format("version -> {0}",orderProperties.getVersion()));
-//        System.out.println(MessageFormat.format("minimumAmount -> {0}",orderProperties.getMinimumOrderAmount()));
-//        System.out.println(MessageFormat.format("supportVendors -> {0}",orderProperties.getSupportVendors()));
-//        System.out.println(MessageFormat.format("description -> {0}",orderProperties.getDescription()));
+        logger.error("logger name ==>{} {} {}",logger.getName(),2,3); // 괄호를 쓰면 자동으로 치환 됨
+        logger.warn("version -> {}",orderProperties.getVersion());
+        logger.warn("minimumAmount -> {}",orderProperties.getMinimumOrderAmount());
+        logger.warn("supportVendors -> {}",orderProperties.getSupportVendors());
+        logger.warn("description -> {}",orderProperties.getDescription());
 
 
         //Reource
@@ -63,7 +72,7 @@ public class OrderTester {
         var readableByteChannel=Channels.newChannel(resource3.getURL().openStream());
         var bufferedReader=new BufferedReader(Channels.newReader(readableByteChannel, StandardCharsets.UTF_8));
         var contents=bufferedReader.lines().collect(Collectors.joining("\n"));
-        System.out.println(contents);
+//        System.out.println(contents);
 
 //        System.out.println(MessageFormat.format("Resource->{0}", resource.getClass().getCanonicalName()));
 //        var file=resource.getFile();

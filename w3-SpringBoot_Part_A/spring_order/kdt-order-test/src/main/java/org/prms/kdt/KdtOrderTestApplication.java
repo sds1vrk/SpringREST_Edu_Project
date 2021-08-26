@@ -4,6 +4,8 @@ import org.prms.kdt.order.OrderProperties;
 import org.prms.kdt.voucher.FixedAmountVoucher;
 import org.prms.kdt.voucher.JdbcVoucherRepository;
 import org.prms.kdt.voucher.VoucherRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,28 +16,22 @@ import java.util.UUID;
 @SpringBootApplication
 @ComponentScan(basePackages = {"org.prms.kdt.order","org.prms.kdt.voucher","org.prms.kdt.configuration"})
 public class KdtOrderTestApplication {
+	private static final Logger logger= LoggerFactory.getLogger(OrderTester.class);
 
 	public static void main(String[] args) {
-		var springApplication=new SpringApplication(KdtOrderTestApplication.class);
-//		springApplication.setAdditionalProfiles("local");
-		var applicationContext=springApplication.run(args);
-//		var applicationContext =SpringApplication.run(KdtOrderTestApplication.class, args);
-
-
+//
+		var applicationContext=SpringApplication.run(KdtOrderTestApplication.class,args);
 		var orderProperties=applicationContext.getBean(OrderProperties.class);
-		System.out.println(MessageFormat.format("version -> {0}",orderProperties.getVersion()));
-		System.out.println(MessageFormat.format("minimumAmount -> {0}",orderProperties.getMinimumOrderAmount()));
-		System.out.println(MessageFormat.format("supportVendors -> {0}",orderProperties.getSupportVendors()));
-		System.out.println(MessageFormat.format("description -> {0}",orderProperties.getDescription()));
+
+		// Spring Boot는 기본적으로 application.properties와 application.yaml을 검색
+
+		logger.error("logger name ==>{} {} {}",logger.getName(),2,3); // 괄호를 쓰면 자동으로 치환 됨
+		logger.warn("version -> {}",orderProperties.getVersion());
+		logger.warn("minimumAmount -> {}",orderProperties.getMinimumOrderAmount());
+		logger.warn("supportVendors -> {}",orderProperties.getSupportVendors());
+		logger.warn("description -> {}",orderProperties.getDescription());
 
 
-
-		var customerId= UUID.randomUUID();
-		var voucherRepository=applicationContext.getBean(VoucherRepository.class);  // qualifier를 안쓸경우 이거 사용
-		var voucher=voucherRepository.insert(new FixedAmountVoucher(UUID.randomUUID(),10L));
-
-		System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository instanceof JdbcVoucherRepository));
-		System.out.println(MessageFormat.format("is JDBC repo -> {0}",voucherRepository.getClass().getCanonicalName()));
 
 	}
 

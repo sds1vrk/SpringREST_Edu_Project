@@ -1,0 +1,7 @@
+19:42:40.135 [main] INFO  org.prms.kdt.OrderTester - logger name ==>org.prms.kdt.OrderTester 2 3
+19:42:40.138 [main] INFO  org.prms.kdt.OrderTester - version -> default-v1.0
+19:42:40.138 [main] INFO  org.prms.kdt.OrderTester - minimumAmount -> 1
+19:42:40.138 [main] INFO  org.prms.kdt.OrderTester - supportVendors -> [defulat]
+19:42:40.138 [main] INFO  org.prms.kdt.OrderTester - description -> defulat line 1  hello world
+defulat line 2 xxxx
+defulat line 3
