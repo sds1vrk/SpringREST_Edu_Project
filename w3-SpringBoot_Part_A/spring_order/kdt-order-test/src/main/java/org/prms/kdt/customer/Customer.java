@@ -1,6 +1,7 @@
 package org.prms.kdt.customer;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 public class Customer {
@@ -45,7 +46,7 @@ public class Customer {
 
     // 로그인을 해야지
     public void login() {
-        this.lastLoginAt=LocalDateTime.now();
+        this.lastLoginAt=LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS);
     }
 
     //Geter는 다 만든다.

@@ -59,7 +59,30 @@ public class CustomerJdbcRepository implements CustomerRepository {
 
     @Override
     public Customer update(Customer customer) {
-        return null;
+
+        try (
+                // 원래 ID 패스워드는 들어가면 안됨 -> 설정 값으로 다 빼줘야 됨
+                var connection=dataSource.getConnection();
+                var statement=connection.prepareStatement("UPDATE customers SET name=?, email=?, last_login_at=? WHERE customer_id=UUID_TO_BIN(?)");
+        ){
+            statement.setString(1,customer.getName());
+            statement.setString(2, customer.getEmail());
+            statement.setTimestamp(3,customer.getLastLoginAt()!=null ? Timestamp.valueOf(customer.getLastLoginAt()):null);
+            statement.setBytes(4,customer.getCustomerId().toString().getBytes());
+            var executeUpdate=statement.executeUpdate();
+
+            if (executeUpdate!=1) {
+                throw new RuntimeException("Noting was updated");
+            }
+
+            return customer;
+
+        }
+        catch (SQLException sqlException) {
+            logger.error("GOT error while createStatement connection",sqlException);
+            throw new RuntimeException(sqlException);
+        }
+
     }
 
     @Override
