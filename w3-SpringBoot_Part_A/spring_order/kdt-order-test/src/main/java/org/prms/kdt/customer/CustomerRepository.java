@@ -9,6 +9,8 @@ public interface CustomerRepository {
     Customer insert(Customer customer);
     Customer update(Customer customer);
 
+    int count();
+
     List<Customer> findAll();
 
     // 찾을려는게 없으면 Null처리를 위한 Optional을 사용
