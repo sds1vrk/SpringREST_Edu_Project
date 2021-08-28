@@ -14,7 +14,7 @@ public class Customer {
     private final LocalDateTime createdAt;
 
     // final이 들어간것 -> 필수적 + name은 만들어져있으면 좋다.
-    public Customer(UUID customerId, String email, LocalDateTime createdAt, String name) {
+    public Customer(UUID customerId, String name,String email, LocalDateTime createdAt) {
         validate(name);
 
         this.customerId = customerId;
