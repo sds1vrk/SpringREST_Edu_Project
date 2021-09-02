@@ -1,5 +1,6 @@
 package org.prms.kdt.voucher;
 
+import org.prms.kdt.aop.TrackTime;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,7 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 //@Qualifier("memory")
 @Primary
 @Profile({"local","default","test"})
-public class MemoryVoucherRepository implements VoucherRepository, InitializingBean, DisposableBean {
+public class MemoryVoucherRepository implements VoucherRepository {
 
     private final Map<UUID, Voucher> storage=new ConcurrentHashMap<>();
 
@@ -32,33 +33,33 @@ public class MemoryVoucherRepository implements VoucherRepository, InitializingB
     }
 
     @Override
+    @TrackTime
     public Voucher insert(Voucher voucher) {
         storage.put(voucher.getVoucherId(),voucher);
         return voucher;
     }
 
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("postConstruct called");
-    }
-
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("afterPropertiesSet called");
-
-    }
-
-    @PreDestroy
-    public void preDestroy() {
-        System.out.println("preDestroy called");
-    }
-
-
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("destroy called");
-
-
-    }
+//    @PostConstruct
+//    public void postConstruct() {
+//        System.out.println("postConstruct called");
+//    }
+//
+//
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        System.out.println("afterPropertiesSet called");
+//
+//    }
+//
+//    @PreDestroy
+//    public void preDestroy() {
+//        System.out.println("preDestroy called");
+//    }
+//
+//
+//    @Override
+//    public void destroy() throws Exception {
+//        System.out.println("destroy called");
+//
+//    }
 }

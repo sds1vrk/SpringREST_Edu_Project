@@ -81,10 +81,10 @@ class CustomerJdbcRepositoryTest {
 
 
         //JDBC Template Bean 등록
-        @Bean
-        public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-            return new JdbcTemplate(dataSource);
-        }
+//        @Bean
+//        public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+//            return new JdbcTemplate(dataSource);
+//        }
 
     }
 

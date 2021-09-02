@@ -2,13 +2,17 @@ package org.prms.kdt.customer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
-import javax.sql.DataSource;
 import java.nio.ByteBuffer;
 import java.sql.Timestamp;
 import java.util.*;
@@ -21,7 +25,7 @@ public class CustomerNamedJdbcRepository implements CustomerRepository {
 
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
-
+//    private final TransactionTemplate transactionTemplate;
 
     private static RowMapper<Customer> customerRowMapper=(resultSet, i) -> {
         var customerName= resultSet.getString("name");
@@ -36,6 +40,7 @@ public class CustomerNamedJdbcRepository implements CustomerRepository {
 
     public CustomerNamedJdbcRepository(NamedParameterJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+//        this.transactionTemplate = transactionTemplate;
     }
 
     private Map<String,Object> toParaMap(Customer customer) {
@@ -102,6 +107,17 @@ public class CustomerNamedJdbcRepository implements CustomerRepository {
             return Optional.empty();
         }
     }
+
+//    public void testTransaction(Customer customer) {
+//        transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+//            @Override
+//            protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+//                jdbcTemplate.update("UPDATE customers SET name=:name WHERE customer_id=UUID_TO_BIN(:customerId)",toParaMap(customer));
+//                jdbcTemplate.update("UPDATE customers SET email=:email WHERE customer_id=UUID_TO_BIN(:customerId)",toParaMap(customer));
+//            }
+//        });
+//    }
+
 
     @Override
     public Optional<Customer> findByName(String name) {

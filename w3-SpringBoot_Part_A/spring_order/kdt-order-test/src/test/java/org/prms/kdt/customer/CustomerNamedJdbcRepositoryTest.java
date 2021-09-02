@@ -11,10 +11,15 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
@@ -87,21 +92,39 @@ class CustomerNamedJdbcRepositoryTest {
             return new NamedParameterJdbcTemplate(jdbcTemplate);
         }
 
+        @Bean
+        public PlatformTransactionManager platformTransactionManager(DataSource dataSource) {
+            return new DataSourceTransactionManager(dataSource);
+        }
+
+        @Bean
+        public TransactionTemplate transactionTemplate(PlatformTransactionManager platformTransactionManager) {
+            return new TransactionTemplate(platformTransactionManager);
+        }
+
+        @Bean
+        public Customer customer() {
+            return new Customer(UUID.randomUUID(),"test-user","test-user@naver.com",LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS));
+        }
+
+
     }
 
 
 //    @Autowired
 //    CustomerJdbcRepository customerJdbcRepository;
 
-    // 만들어진 빈 연결
+    // 만들어진 빈 사용 (필드 주입) -> 위에서 생성되어진 빈이 들어감
     @Autowired
     CustomerNamedJdbcRepository customerNamedJdbcRepository;
 
-    // 만들어진 빈 연결
+    // 만들어진 빈 사용 (필드 주입) -> 위에서 생성되어진 빈이 들어감
     @Autowired
     DataSource dataSource;
 
+//    @Autowired
     Customer newCustomer;
+
 
 //    EmbeddedMysql embeddedMysql;
 
@@ -109,7 +132,7 @@ class CustomerNamedJdbcRepositoryTest {
     @BeforeAll
     void setup() {
 
-        newCustomer=new Customer(UUID.randomUUID(),"test-user","test-user@naver.com",LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS));
+//        newCustomer=new Customer(UUID.randomUUID(),"test-user","test-user@naver.com",LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS));
         customerNamedJdbcRepository.deleteAll();
 
 
@@ -216,6 +239,36 @@ class CustomerNamedJdbcRepositoryTest {
         var retrieveCustomer=customerNamedJdbcRepository.findById(newCustomer.getCustomerId());
         assertThat(retrieveCustomer.isEmpty(),is(false));
         assertThat(retrieveCustomer.get(),samePropertyValuesAs(newCustomer));
+
+    }
+
+    @Test
+    @Order(7)
+    @DisplayName("트랜잭션 테스트")
+    public void testTransaction(){
+
+//        var prevOne=customerNamedJdbcRepository.findById(newCustomer.getCustomerId());
+//        assertThat(prevOne.isEmpty(),is(false));
+//        var newOne=new Customer(UUID.randomUUID(),"a","a@gmail.com",LocalDateTime.now());
+//        var insertedNewOne=customerNamedJdbcRepository.insert(newOne);
+//
+//        try {
+//            customerNamedJdbcRepository.testTransaction(
+//                    new Customer(insertedNewOne.getCustomerId(),
+//                            "b",prevOne.get().getEmail(),newOne.getCreatedAt()));
+//
+//          }catch (DataAccessException e) {
+//                logger.error("Got error when testing transcation",e);
+//        }
+//
+//        var maybeNewOne=customerNamedJdbcRepository.findById(insertedNewOne.getCustomerId());
+//        assertThat(maybeNewOne.isEmpty(),is(false));
+//
+//        assertThat(maybeNewOne.get(),samePropertyValuesAs(newOne));
+
+
+
+
 
     }
 
