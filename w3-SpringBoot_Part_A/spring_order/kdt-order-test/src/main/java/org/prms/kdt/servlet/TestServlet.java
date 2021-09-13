@@ -4,11 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// value = "/*" -> 어떤 path가 오든지 동작시키겠다
+// loadOnStartup =1 -> 요청이 안들어와도 init 시키겠다, defualt는 -1 (요청이 들어올때 init)
+@WebServlet(value = "/*",loadOnStartup = 1)
 public class TestServlet extends HttpServlet {
     private static final Logger logger=LoggerFactory.getLogger(TestServlet.class);
 
