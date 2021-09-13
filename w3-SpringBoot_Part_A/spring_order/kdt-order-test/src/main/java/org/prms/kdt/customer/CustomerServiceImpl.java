@@ -16,7 +16,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 
     @Override
-    @Transactional(propagation = )
+//    @Transactional(isolation = )
     public void createCustomers(List<Customer> customers) {
         customers.forEach(customerRepository::insert);
     }
