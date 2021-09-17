@@ -12,7 +12,7 @@ import java.io.IOException;
 
 // value = "/*" -> 어떤 path가 오든지 동작시키겠다
 // loadOnStartup =1 -> 요청이 안들어와도 init 시키겠다, defualt는 -1 (요청이 들어올때 init)
-@WebServlet(value = "/*",loadOnStartup = 1)
+//@WebServlet(value = "/*",loadOnStartup = 1)
 public class TestServlet extends HttpServlet {
     private static final Logger logger=LoggerFactory.getLogger(TestServlet.class);
 

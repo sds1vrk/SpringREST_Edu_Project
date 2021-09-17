@@ -1,0 +1,47 @@
+[
+  {
+    "customerId": "344c8b70-3c61-4ddf-9e81-5e868d3cef69",
+    "name": "ABC",
+    "email": "hello@naver.com",
+    "lastLoginAt": null,
+    "createdAt": [
+      2021,
+      9,
+      16,
+      17,
+      21,
+      30,
+      158412000
+    ]
+  },
+  {
+    "customerId": "5b9e1dac-b5b9-4ac2-bb9f-78eee8ca2fa6",
+    "name": "test-user",
+    "email": "test-user@naver.com",
+    "lastLoginAt": null,
+    "createdAt": [
+      2021,
+      9,
+      15,
+      20,
+      51,
+      28,
+      491000000
+    ]
+  },
+  {
+    "customerId": "dde3501e-3c0f-4a1f-9133-7776db64265c",
+    "name": "sds",
+    "email": "sds1zzang@naver.com",
+    "lastLoginAt": null,
+    "createdAt": [
+      2021,
+      9,
+      16,
+      17,
+      21,
+      15,
+      214428000
+    ]
+  }
+]

@@ -1,0 +1,144 @@
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/json
+Content-Type: :application/json
+
+<> 2021-09-17T134511.200.json
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/json
+Content-Type: :application/json
+
+<> 2021-09-17T134213.200.json
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/json
+
+<> 2021-09-17T134157.200.xml
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/json
+
+<> 2021-09-17T134152.404.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/json
+
+<> 2021-09-17T134053.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/json
+
+<> 2021-09-17T134032.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-17T134024.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-17T134021.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-17T134018.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-17T134003.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-17T133954.404.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-17T133523.200.xml
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+<> 2021-09-17T133052.200.xml:
+<> 2021-09-17T133036.404.html:
+
+<> 2021-09-17T133419.200.xml
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/json
+<> 2021-09-17T133052.200.xml:
+<> 2021-09-17T133036.404.html:
+
+<> 2021-09-17T133405.200.json
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/json
+<> 2021-09-17T133052.200.xml:
+<> 2021-09-17T133036.404.html:
+
+<> 2021-09-17T133330.404.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/json
+<> 2021-09-17T133052.200.xml:
+<> 2021-09-17T133036.404.html:
+
+<> 2021-09-17T133131.406.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+
+<> 2021-09-17T133052.200.xml
+
+###
+
+GET http://localhost:8080/api/v1/customers
+
+<> 2021-09-17T133036.404.html
+
+###
+

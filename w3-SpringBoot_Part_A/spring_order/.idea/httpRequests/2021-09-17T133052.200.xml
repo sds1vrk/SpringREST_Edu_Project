@@ -1,0 +1,20 @@
+<list>
+    <org.prms.kdt.customer.Customer>
+        <customerId>344c8b70-3c61-4ddf-9e81-5e868d3cef69</customerId>
+        <name>ABC</name>
+        <email>hello@naver.com</email>
+        <createdAt>2021-09-16T17:21:30.158412</createdAt>
+    </org.prms.kdt.customer.Customer>
+    <org.prms.kdt.customer.Customer>
+        <customerId>5b9e1dac-b5b9-4ac2-bb9f-78eee8ca2fa6</customerId>
+        <name>test-user</name>
+        <email>test-user@naver.com</email>
+        <createdAt>2021-09-15T20:51:28.491</createdAt>
+    </org.prms.kdt.customer.Customer>
+    <org.prms.kdt.customer.Customer>
+        <customerId>dde3501e-3c0f-4a1f-9133-7776db64265c</customerId>
+        <name>sds</name>
+        <email>sds1zzang@naver.com</email>
+        <createdAt>2021-09-16T17:21:15.214428</createdAt>
+    </org.prms.kdt.customer.Customer>
+</list>

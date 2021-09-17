@@ -46,9 +46,23 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.9" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.7" />
           <element id="library" level="project" name="Maven: com.h2database:h2:1.4.200" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.50" />
+          <element id="library" level="project" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-thymeleaf:2.5.3" />
+          <element id="library" level="project" name="Maven: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf-spring5:3.0.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: com.thoughtworks.xstream:xstream:1.4.17" />
+          <element id="library" level="project" name="Maven: io.github.x-stream:mxparser:1.2.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:5.3.9" />
+          <element id="library" level="project" name="Maven: xmlpull:xmlpull:1.1.3.1" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="kdt-order-test/web/Web" />
+      <element id="dir-copy" path="$PROJECT_DIR$/kdt-order-test/src/main/webapp" />
     </root>
   </artifact>
 </component>
