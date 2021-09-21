@@ -34,7 +34,10 @@
         <tbody>
 
         <tr th:each="customer: ${customers}" th:object="${customer}">
-            <td th:text="${customer.customerId}"></td>
+<!--            <td> <a th:href="@{${customer.customerId}}" th:text="${customer.customerId}"</a></td>-->
+<!--            <td><a th:href="@{/customers/{id}(id=${customer.customerId})}">view</a></td>-->
+            <td><a th:href="@{/customers/{id}(id=${customer.customerId})}" th:text="${customer.customerId}"></a></td>
+
             <td th:text="*{name}"></td>
             <td th:text="*{email}"></td>
             <td th:text="*{createdAt}"></td>

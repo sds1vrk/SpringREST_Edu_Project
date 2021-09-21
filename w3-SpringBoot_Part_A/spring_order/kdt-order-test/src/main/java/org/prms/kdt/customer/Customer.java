@@ -14,6 +14,7 @@ public class Customer {
     private LocalDateTime lastLoginAt; // 로그인은 마지막 접속이 바뀔수있으므로 final 제외
     private final LocalDateTime createdAt;
 
+
     // final이 들어간것 -> 필수적 + name은 만들어져있으면 좋다.
     public Customer(UUID customerId, String name,String email, LocalDateTime createdAt) {
         validate(name);
