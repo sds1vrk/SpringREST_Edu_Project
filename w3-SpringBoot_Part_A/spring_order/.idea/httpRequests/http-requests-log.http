@@ -1,4 +1,38 @@
 GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+<> 2021-09-22T145751.200.xml
+
+###
+
+GET http://localhost:8080/customers
+
+<> 2021-09-22T145743.404.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/xml
+Content-Type: :application/xml
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
+Accept: application/json
+Content-Type: :application/json
+
+<> 2021-09-22T145510.200.json
+
+###
+
+GET http://localhost:8080/customers
+
+<> 2021-09-22T145455.404.html
+
+###
+
+GET http://localhost:8080/kdt/api/v1/customers
 Accept: application/json
 Content-Type: :application/json
 

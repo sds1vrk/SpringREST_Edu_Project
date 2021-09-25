@@ -2,11 +2,8 @@ package org.prms.kdt.servlet;
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import com.thoughtworks.xstream.XStream;
 import com.zaxxer.hikari.HikariDataSource;
-import org.apache.tomcat.jni.Local;
-import org.prms.kdt.configuration.AppConfiguration;
-import org.prms.kdt.customer.*;
+import org.prms.kdt.customer.controller.CustomerController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -24,7 +21,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -83,8 +79,8 @@ public class KdtWebApplicationInitializer implements WebApplicationInitializer {
         // 정적
         @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/resource/**")
-                    .addResourceLocations("/resource/")
+            registry.addResourceHandler("/static/resource/**")
+                    .addResourceLocations("/static/resource/")
                     .setCachePeriod(60) // 60초마다 갱신
                     .resourceChain(true)
                     .addResolver(new EncodedResourceResolver());

@@ -1,5 +1,7 @@
-package org.prms.kdt.customer;
+package org.prms.kdt.customer.controller;
 
+import org.prms.kdt.customer.service.CustomerService;
+import org.prms.kdt.customer.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -55,6 +57,7 @@ public class CustomerController {
 
         model.addAttribute("serverTime",LocalDateTime.now());
         model.addAttribute("customers",allCustomers);
+//        return "views/customers";
         return "views/customers";
     }
 

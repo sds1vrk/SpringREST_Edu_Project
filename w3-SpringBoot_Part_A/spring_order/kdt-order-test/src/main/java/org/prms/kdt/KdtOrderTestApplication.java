@@ -1,38 +1,33 @@
 package org.prms.kdt;
 
-import org.prms.kdt.order.OrderProperties;
-import org.prms.kdt.voucher.FixedAmountVoucher;
-import org.prms.kdt.voucher.JdbcVoucherRepository;
-import org.prms.kdt.voucher.VoucherRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
+import org.springframework.oxm.xstream.XStreamMarshaller;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.text.MessageFormat;
-import java.util.UUID;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"org.prms.kdt.order","org.prms.kdt.voucher","org.prms.kdt.configuration"})
-public class KdtOrderTestApplication {
-	private static final Logger logger= LoggerFactory.getLogger(OrderTester.class);
+@ComponentScan(basePackages ={"org.prms.kdt.customer","org.prms.kdt.config"})
+public class KdtOrderTestApplication implements WebMvcConfigurer{
 
 	public static void main(String[] args) {
-//
-		var applicationContext=SpringApplication.run(KdtOrderTestApplication.class,args);
-		var orderProperties=applicationContext.getBean(OrderProperties.class);
-
-		// Spring Boot는 기본적으로 application.properties와 application.yaml을 검색
-
-		logger.error("logger name ==>{} {} {}",logger.getName(),2,3); // 괄호를 쓰면 자동으로 치환 됨
-		logger.warn("version -> {}",orderProperties.getVersion());
-		logger.warn("minimumAmount -> {}",orderProperties.getMinimumOrderAmount());
-		logger.warn("supportVendors -> {}",orderProperties.getSupportVendors());
-		logger.warn("description -> {}",orderProperties.getDescription());
-
-
+		SpringApplication.run(KdtOrderTestApplication.class,args);
 
 	}
+
+
+
 
 }

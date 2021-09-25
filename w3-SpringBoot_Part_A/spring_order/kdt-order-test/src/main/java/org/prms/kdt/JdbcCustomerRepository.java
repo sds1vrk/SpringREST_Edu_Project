@@ -1,12 +1,11 @@
 package org.prms.kdt;
 
-import org.prms.kdt.customer.Customer;
+import org.prms.kdt.customer.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.ByteBuffer;
 import java.sql.*;
-import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;

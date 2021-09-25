@@ -4,13 +4,33 @@
 #  - foo.bar.com
 
 # Local 읽혀짐
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/order_mgmt
+    username: root
+    password: root1234!
+#  thymeleaf:
+#    prefix: /WEB-INF/
+#    view-names: views/*
+#    suffix: .html
+#    view-names: views/*
+#    view-names: "views/*"
+#    prefix: "/WEB-INF/"
+
+server:
+  servlet:
+    context-path: /kdt
+
 
 kdt:
-  version: "default-v1.0"
+  version: "v1.0"
   minimum-order-amount: 1
-  supportVendors:
-    - defulat
+  support-vendors:
+    - a
+    - b
+    - c
+    - d
   description: |-
-    defulat line 1  hello world
-    defulat line 2 xxxx
-    defulat line 3
+    line 1 hello world
+    line 2 xxxx
+    line 3

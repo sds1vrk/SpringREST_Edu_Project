@@ -1,4 +1,9 @@
 # Local 읽혀짐
+logging:
+  level:
+    org:
+      springframework: DEBUG
+
 kdt:
   version: "v1.0-local"
   minimum-order-amount: 1
